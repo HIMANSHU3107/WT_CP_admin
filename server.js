@@ -1,13 +1,12 @@
 // Import Express and CORS
 const express = require("express");
 const cors = require("cors");
-
 // Import mongoose
 const mongoose = require("mongoose");
 
 // Import Blog schema
 const Blog = require("./schema");
-
+const port = process.env.PORT || 7000;
 // MongoDB Database URL
 // <<<<<<< HEAD
 const uri = 'mongodb+srv://Himanshu:Himanshu@31@cluster0.130ea.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
@@ -31,7 +30,7 @@ app.use(cors());
 app.use(express.json());
 
 // Start the server on port 7000
-app.listen(7000, () => {
+app.listen(port, () => {
     console.log("Server listening on port 7000");
 });
 
