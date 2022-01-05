@@ -40,12 +40,14 @@ app.post("/create", (req, res) => {
     title = req.body.title;
     content = req.body.content;
     imageurl = req.body.imageurl;
+    cardurl = req.body.cardurl;
 
     // Create blog using create()
     Blog.create({
         title: title,
         content: content,
         imageurl: imageurl,
+        cardurl: cardurl,
     })
         .then((blog) => {
             // Send the created blog
@@ -80,6 +82,7 @@ app.put("/edit/:id", (req, res) => {
     title = req.body.title;
     content = req.body.content;
     imageurl = req.body.imageurl;
+    cardurl = req.body.cardurl;
     blogId = req.params.id;
 
     // Find and update blog by it's _id
@@ -87,6 +90,7 @@ app.put("/edit/:id", (req, res) => {
         title: title,
         content: content,
         imageurl: imageurl,
+        cardurl: cardurl,
     })
         .then((data) => {
             // Send updated blog as JSON
